@@ -1,0 +1,14 @@
+@import '../helpers/mix';
+
+.app-link{
+  color: white;
+  text-decoration: none;
+  @include no-select-text(pointer);
+
+  &.hoverable{
+    &:hover{
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+}

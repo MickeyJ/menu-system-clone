@@ -1,0 +1,57 @@
+@import '../helpers/mix';
+@import '../helpers/media';
+@import '../helpers/vars';
+
+.menu-tab{
+  @include resetMP;
+  @include rowFactory(100%, 5, 0px);
+  @include transition-ease-out(line-height $menu-drop-rate);
+  @include center-text($menu-tab-height, center);
+  @include no-select-text(default);
+  font-size: 19px;
+  padding: 1% 0;
+
+  .menu-tab-title{
+    @include transition-ease-out(color $menu-drop-rate);
+    color: white;
+  }
+
+  .sub-links{
+    display: none;
+    line-height: $menu-tab-height / 4;
+  }
+
+  &.dropable{
+
+    &:hover{
+      @include center-text($menu-tab-height / 2, center);
+      border-radius: 0 0 5px 5px;
+
+      .sub-links{
+        display: block;
+      }
+
+      .menu-tab-title{
+        color: rgba(255, 255, 255, 0.76);
+        &:hover{
+          color: white
+        }
+      }
+    }
+  }
+
+  @include tablet{
+    font-size: 15px;
+    @include center-text($menu-tab-height / 1.5, center);
+  }
+
+  @include phone{
+    display: block;
+    width: 100%;
+
+    .sub-links{
+      display: block
+    }
+  }
+
+}

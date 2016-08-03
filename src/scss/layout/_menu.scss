@@ -1,0 +1,12 @@
+@import '../helpers/media';
+@import '../helpers/vars';
+@import '../helpers/mix';
+
+#drop-menu{
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  display: none;
+  margin-top: $menu-drop-height;
+  @include transition-bezier(margin-top $menu-drop-rate);
+}

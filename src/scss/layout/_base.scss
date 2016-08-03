@@ -1,0 +1,24 @@
+@import 'header';
+@import 'menu';
+@import 'main-contain';
+
+html,
+body{
+  @include resetMP;
+  @include crossBrowser(box-sizing, border-box);
+  width: 100%;  height: 100%;
+  font-family: Open, sans-serif;
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+}
+
+#top-container{
+  position: relative;
+}
+
+.shadow{
+  @include box-shadow;
+}

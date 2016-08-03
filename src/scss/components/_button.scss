@@ -1,0 +1,33 @@
+@import '../helpers/mix';
+@import '../helpers/media';
+@import '../helpers/vars';
+
+.app-btn{
+  @include rounded(30px);
+  @include no-select-text(pointer);
+  @include center-text($btn-height, center);
+  @include crossBrowser(box-sizing, border-box);
+  display: inline-block;
+  min-width: 125px;
+  max-width: 250px;
+  font-size: 19px;
+  padding: 0 2%;
+
+  @include tablet{
+    @include center-text($btn-height / 1.5, center);
+    font-size: 15px;
+    min-width: 100px;
+    max-width: 200px;
+    padding: 0 1%;
+  }
+
+  &.border-dark{
+    border: 1px solid #747474;
+  }
+
+  &.border-light{
+    border: 1px solid white;
+  }
+}
+
+

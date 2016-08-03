@@ -1,0 +1,21 @@
+@import '../helpers/vars';
+@import '../helpers/mix';
+
+#main-container{
+  width: 100%;
+  border-top: 1px solid #ccc;
+  @include center-text($page-content-height, center);
+
+  #bg-fade{
+    position: absolute;
+    top: 0;  left: 0;
+    width: inherit;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.77);
+    @include transition-bezier(opacity $menu-drop-rate);
+  }
+
+  @include phone{
+    font-size: 14px;
+  }
+}

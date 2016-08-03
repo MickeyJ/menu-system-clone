@@ -1,0 +1,18 @@
+@import '../helpers/color';
+@import '../helpers/mix';
+
+@mixin bg-colors{
+  .bg-blue{
+    @include set-bg-color($app-blue);
+  }
+  .bg-blue-light{
+    @include set-bg-color($app-blue-light);
+  }
+  .bg-yellow{
+    @include set-bg-color($app-yellow);
+  }
+  .bg-orange{
+    @include set-bg-color($app-orange);
+  }
+}
+

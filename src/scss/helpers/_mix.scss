@@ -1,0 +1,133 @@
+
+@mixin set-bg-color($color){
+  background: $color;
+  &.hoverable{
+    &:hover{
+      background: lighten($color, 5%);
+    }
+  }
+}
+
+@mixin crossBrowser($key, $value){
+  #{$key}: $value;
+  -webkit-#{$key}: $value;
+  -moz-#{$key}: $value;
+}
+
+@function set-width($target, $boxCount, $margin){
+  @return calc((#{$target} / #{$boxCount}) - #{$margin} * 1.5);
+}
+
+@mixin rowFactory($target, $boxCount, $margin, $align: top) {
+  width: set-width($target, $boxCount, $margin);
+  display: inline-block;
+  vertical-align: $align;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin rounded($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin no-select-text($cursor){
+  cursor: $cursor;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  &::selection{
+    background-color: transparent;
+  }
+}
+
+@mixin center-text($height, $align){
+  min-height: $height;
+  line-height: $height;
+  text-align: $align;
+}
+
+@mixin box-shadow{
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  &:hover {
+    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 5px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+    -o-box-shadow: 0 5px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+  }
+
+  &.clickable{
+    &:focus{
+      -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      -o-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+  }
+}
+
+@mixin transition-bezier($type){
+  -webkit-transition: $type cubic-bezier(0.625, 0.380, 0.440, 0.860);
+  -o-transition: $type cubic-bezier(0.625, 0.380, 0.440, 0.860);
+  transition: $type cubic-bezier(0.625, 0.380, 0.440, 0.860);
+
+  -webkit-transition-timing-function: cubic-bezier(0.625, 0.380, 0.440, 0.860);
+  -moz-transition-timing-function: cubic-bezier(0.625, 0.380, 0.440, 0.860);
+  -o-transition-timing-function: cubic-bezier(0.625, 0.380, 0.440, 0.860);
+  transition-timing-function: cubic-bezier(0.625, 0.380, 0.440, 0.860);
+}
+
+@mixin transition-ease-out($type){
+  -webkit-transition: $type cubic-bezier(0.405, 1.040, 0.800, 0.950);
+  -moz-transition: $type cubic-bezier(0.405, 1.040, 0.800, 0.950);
+  -o-transition: $type cubic-bezier(0.405, 1.040, 0.800, 0.950);
+  transition: $type cubic-bezier(0.405, 1.040, 0.800, 0.950);
+
+  -webkit-transition-timing-function: cubic-bezier(0.405, 1.040, 0.800, 0.950);
+  -moz-transition-timing-function: cubic-bezier(0.405, 1.040, 0.800, 0.950);
+  -o-transition-timing-function: cubic-bezier(0.405, 1.040, 0.800, 0.950);
+  transition-timing-function: cubic-bezier(0.405, 1.040, 0.800, 0.950);
+}
+
+@mixin resetMP{
+  margin: 0;
+  padding: 0;
+}
+
+@mixin center-margin{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin marg-lat{
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+@mixin marg-vert{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+@mixin pad-lat{
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+@mixin pad-vert{
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+%clearFix::after{
+  content: '';
+  display: table;
+  clear: both;
+}

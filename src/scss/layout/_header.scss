@@ -1,0 +1,71 @@
+@import '../helpers/media';
+@import '../helpers/vars';
+@import '../helpers/mix';
+
+#app-header{
+  position: relative;
+  width: 100%;
+  height: $header-height;
+  background: white;
+  z-index: 10;
+
+  @include tablet{
+    height: $header-height / 1.5;
+  }
+
+  @include phone{
+    height: $header-height * 1.2;
+  }
+
+  #app-logo{
+    position: absolute;
+    top: 50%; left: 2%;
+    height: $logo-height;
+    margin-top: calc(-#{$logo-height} / 2);
+    display: inline;
+    vertical-align: middle;
+
+    img{
+      height: $logo-height;
+    }
+
+    @include tablet{
+      height: $logo-height  / 1.5;
+      margin-top: calc(-#{$logo-height} / 3);
+      img{
+        height: $logo-height  / 1.5;
+      }
+    }
+
+    @include phone{
+      height: $header-height * 1.5;
+      margin-top: calc(-#{$logo-height} / 1.2);
+    }
+  }
+
+  #app-nav{
+    @include resetMP;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    height: $btn-height;
+    margin-top: calc(-#{$btn-height} / 2);
+    display: inline;
+    vertical-align: middle;
+
+    .app-nav-item{
+      margin-right: 2%;
+    }
+
+    @include tablet{
+      height: $btn-height / 1.5;
+      margin-top: calc(-#{$btn-height} / 3);
+    }
+
+    @include phone{
+      height: $btn-height * 1.5;
+      margin-top: calc(#{$btn-height} / 6);
+    }
+  }
+
+}

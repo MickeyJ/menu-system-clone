@@ -1,0 +1,19 @@
+@import '../helpers/color';
+
+@mixin txt-colors{
+  .txt-blue{
+    color: $app-blue;
+  }
+  .txt-blue-light{
+    color: $app-blue-light;
+  }
+  .txt-yellow{
+    color: $app-yellow;
+  }
+  .txt-orange{
+    color: $app-orange;
+  }
+  .txt-white{
+    color: white;
+  }
+}
