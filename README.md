@@ -1,4 +1,4 @@
-Frontify Menu System CLone
+Frontify Menu System Clone
 ==========================
  - create robust menu system
  - intuitive, smooth interactivity
